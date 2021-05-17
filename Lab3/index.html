@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>WEATHER</title>
+    <script src="script.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="search_block">
+    <input id="search" type="text" placeholder="Введите имя или координаты">
+    <button id="search_btn" type="submit" onclick="search()">Поиск</button>
+</div>
+
+<div class="grid-container">
+    <div class="grid-item">
+        <div id="weather_info">
+            <div id="date_time" class="orange_text"></div>
+            <h2 id="city_region"></h2>
+            <div>
+                <div id="temp">
+                    <img id="weather_icon" src="" alt="">
+                    <h1 id="temperature"></h1>
+                </div>
+                <div class="pad" id="feels_like"></div>
+                <div class="pad" id="weather_main"></div>
+                <div class="pad" id="wind"></div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img id="map_img" src="" alt="">
+    </div>
+</div>
+</body>
+</html>
