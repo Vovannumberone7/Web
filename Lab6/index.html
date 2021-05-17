@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Аудио-плеер</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+        <link href="Main.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="player">
+            <div id="player-block" class="inline">
+                <div id="songTitle">Demo</div>
+                <audio crossorigin="anonymous"></audio>
+                <div id="buttons">
+                    <button id="pre" onclick="previous()"><img src="img/Pre.png" height="90%" width="90%"/></button>
+                    <img id="play" src="img/Play.png" onclick="playOrPauseSong()"/>
+                    <button id="next" onclick="next()"><img src="img/Next.png" height="90%" width="90%"/></button>
+                </div>
+
+                <div class="bar">
+                    <div id="current-time">00:00</div>
+                    <div id="seek-bar">
+                        <div id="fill"></div>
+                        <div id="handle"></div>
+                    </div>
+                    <div id="song-duration">00:00</div>
+                </div>
+            </div>
+            <div id="volume-add" class="inline">
+                <div class="volume-bar"></div>
+                <div style="padding-top: 30px">
+                    <div class="add-file"><label class="add-plus" for="add-plus-input">+<input type="file" id="add-plus-input" class="add-file-input" /></label></div>
+                </div>
+            </div>
+        </div>
+        <div class="equalizer">
+            <div class="section">
+                <div class="title">HF</div>
+                <div class="sliders">
+                    <div class="range-slider">
+                        <span class="scope">22</span>
+                        <input type="range" class="vertical" min="4700" max="22000" step="100" value="4700" data-filter="highShelf" data-param="frequency">
+                        <span class="scope scope-min">4.7</span>
+                        <span class="param">kHz</span>
+                    </div>
+                    <div class="range-slider">
+                        <span class="scope">50</span>
+                        <input type="range" class="vertical" min="-50" max="50" value="50" data-filter="highShelf" data-param="gain">
+                        <span class="scope scope-min">-50</span>
+                        <span class="param">dB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="title">LF</div>
+                <div class="sliders">
+                    <div class="range-slider">
+                        <span class="scope">220</span>
+                        <input type="range" class="vertical" min="35" max="220" step="1" value="35" data-filter="lowShelf" data-param="frequency">
+                        <span class="scope scope-min">35</span>
+                        <span class="param">Hz</span>
+                    </div>
+                    <div class="range-slider">
+                        <span class="scope">50</span>
+                        <input type="range" class="vertical" min="-50" max="50" value="50" data-filter="lowShelf" data-param="gain">
+                        <span class="scope scope-min">-50</span>
+                        <span class="param">dB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="title">HMF</div>
+                <div class="sliders">
+                    <div class="range-slider">
+                        <span class="scope">5.9</span>
+                        <input type="range" class="vertical" min="800" max="5900" step="100" value="800" data-filter="highPass" data-param="frequency">
+                        <span class="scope scope-min">0.8</span>
+                        <span class="param">kHz</span>
+                    </div>
+                    <div class="range-slider">
+                        <span class="scope">12</span>
+                        <input type="range" class="vertical" min="0.7" max="12" step="0.1" value="0.7" data-filter="highPass" data-param="Q">
+                        <span class="scope scope-min">0.7</span>
+                        <span class="param">Q</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="title">LMF</div>
+                <div class="sliders">
+                    <div class="range-slider">
+                        <span class="scope">1600</span>
+                        <input type="range" class="vertical" min="80" max="1600" step="10" value="880" data-filter="lowPass" data-param="frequency">
+                        <span class="scope scope-min">80</span>
+                        <span class="param">Hz</span>
+                    </div>
+                    <div class="range-slider">
+                        <span class="scope">12</span>
+                        <input type="range" class="vertical" min="0.7" max="12" step="0.1" value="0.7" data-filter="lowPass" data-param="Q">
+                        <span class="scope scope-min">0.7</span>
+                        <span class="param">Q</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <script type="text/javascript" src="js/Model.js"></script>
+    <script type="text/javascript" src="js/Player.js"></script>    
+</html>
