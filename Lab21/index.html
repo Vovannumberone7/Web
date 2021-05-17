@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graphic</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="wrapper">
+    <div class="left" id="view"></div>
+    <div class="right">
+        <label>
+            <input id="func1" type="checkbox" name="showFunc1">
+        </label> Показывать квадратичную функцию <br>
+        <label>
+            <input id="func2" type="checkbox" name="showFunc2">
+        </label> Показывать линейную функцию <br>
+        <label>
+            k = <input id="k" type="number" value="0"> <br>
+        </label>
+        <label>
+            b = <input id="b" type="number" value="0"> <br>
+        </label>
+        <label>
+            точность <input id="step" type="number" value="5" min="5" max="100"> <br>
+        </label>
+        <button onclick="controller.showGraphics()">Показать</button>
+    </div>
+</div>
+</body>
+<script src="Model.js"></script>
+<script src="View.js"></script>
+<script src="Controller.js"></script>
+</html>
